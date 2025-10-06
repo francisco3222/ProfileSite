@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="<%= currentLang === 'en' ? 'en' : 'pt' %>">
 <head>
     <meta charset="UTF-8">
     <title>Henriques.DEV</title>
@@ -11,75 +11,86 @@
     <nav class="navbar">
         <div class="logo">Henriques.<span>DEV</span></div>
         <ul class="nav-links">
-            <li><a href="/home" class="<%= currentPath === '/home' ? 'active' : '' %>">Home</a></li>
-            <li><a href="/servicos" class="<%= currentPath === '/servicos' ? 'active' : '' %>">Serviços</a></li>
-            <li><a href="/projetos" class="<%= currentPath === '/projetos' ? 'active' : '' %>">Projetos</a></li>
-            <li><a href="/contactos" class="<%= currentPath === '/contactos' ? 'active' : '' %>">Contactos</a></li>
+            <li><a href="/home" class="<%= currentPath === '/home' ? 'active' : '' %>"><%= currentLang === 'pt' ? 'Home' : 'Home' %></a></li>
+            <li><a href="/servicos" class="<%= currentPath === '/servicos' ? 'active' : '' %>"><%= currentLang === 'pt' ? 'Serviços' : 'Services' %></a></li>
+            <li><a href="/projetos" class="<%= currentPath === '/projetos' ? 'active' : '' %>"><%= currentLang === 'pt' ? 'Projetos' : 'Projects' %></a></li>
+            <li><a href="/contactos" class="<%= currentPath === '/contactos' ? 'active' : '' %>"><%= currentLang === 'pt' ? 'Contactos' : 'Contacts' %></a></li>
+            <div class="lang-switch">
+              <% if(currentLang === 'pt') { %>
+                <a href="/set-language/en" class="lang-btn">
+                  <img src="/Imagens/en.png" alt="EN" width="49" height="22">
+                </a>
+              <% } else { %>
+                <a href="/set-language/pt" class="lang-btn">
+                  <img src="/Imagens/pt.png" alt="PT" width="49" height="22">
+                </a>
+              <% } %>
+            </div>
         </ul>
-        <div class="lang-switch">
-            <span>🌐</span> EN
-        </div>
     </nav>
     <main>
         <div class="arrow-right">
-            <svg width="80" height="10"><line x1="0" y1="5" x2="35" y2="5" stroke="#fff" stroke-width="2"/><polygon points="35,0 40,5 35,10" fill="#fff"/></svg>
+            <a href="/servicos" aria-label="Go to Services"><img src="/Imagens/arrow-right.png" alt="Arrow Right" width="120"></a>
         </div>
         <section class="hero">
             <div class="hero-left">
-                <div class="portrait-container">
-                    <div class="portrait-bg"></div>
-                    <div class="portrait" style="background-image: url('/img/portrait.png');"></div>
-                </div>
+                <img id="profile-pic" src="/Imagens/portrait.png" alt="Francisco Henriques" class="profile-pic">
                 <div class="socials">
-                    <a href="https://www.linkedin.com/in/francisco-adelino-521513303/" target="_blank" aria-label="LinkedIn"><img src="/img/linkedin.svg" alt="LinkedIn" width="20"></a>
-                    <a href="https://github.com/francisco3222" target="_blank" aria-label="GitHub"><img src="/img/github.svg" alt="GitHub" width="20"></a>
-                    <a href="https://instagram.com/franciscoadelino756" target="_blank" aria-label="Instagram"><img src="/img/instagram.svg" alt="Instagram" width="20"></a>
-                    <a href="https://discord.com/users/318829246850007041" target="_blank" aria-label="Discord"><img src="/img/discord.svg" alt="Discord" width="20"></a>
+                    <a href="https://www.linkedin.com/in/francisco-adelino-521513303/" target="_blank" aria-label="LinkedIn"><img src="/Imagens/linkedin.png" alt="LinkedIn" width="20"></a>
+                    <a href="https://github.com/francisco3222" target="_blank" aria-label="GitHub"><img src="/Imagens/github.png" alt="GitHub" width="20"></a>
+                    <a href="https://instagram.com/franciscoadelino756" target="_blank" aria-label="Instagram"><img src="/Imagens/instagram.png" alt="Instagram" width="20"></a>
+                    <a href="https://discord.com/users/318829246850007041" target="_blank" aria-label="Discord"><img src="/Imagens/discord.png" alt="Discord" width="20"></a>
                 </div>
             </div>
             <div class="hero-right">
-                <h2>Olá <span aria-label="wave" role="img">👋</span>, sou o <span class="highlight1">Francisco</span></h2>
-                <h3>E sou um <span class="highlight2">Desenvolvedor</span></h3>
+                <h2>
+                    <%= currentLang === 'pt' ? 'Olá' : 'Hello' %> <span aria-label="wave" role="img">👋</span>,
+                    <%= currentLang === 'pt' ? 'sou o' : 'I am' %> <span class="highlight1">Francisco</span>
+                </h2>
+                <h3>
+                    <%= currentLang === 'pt' ? 'E sou um' : 'And I am a' %> <span class="highlight2"><%= currentLang === 'pt' ? 'Desenvolvedor' : 'Developer' %></span>
+                </h3>
                 <p>
-                    Sou estudante de Engenharia Informática na Universidade da Madeira, apaixonado por desenvolvimento web, segurança de sistemas e criação de jogos.
+                    <%= currentLang === 'pt' ?
+                        'Sou estudante de Engenharia Informática na Universidade da Madeira, apaixonado por desenvolvimento web, segurança de sistemas e criação de jogos.'
+                        :
+                        'I am a Computer Science student at the University of Madeira, passionate about web development, system security and game creation.' %>
                 </p>
                 <p>
-                    Procuro criar soluções eficientes, escaláveis e seguras, sempre com foco na experiência do utilizador. Tenho também grande interesse em desenvolvimento de jogos, em áreas como hitboxes, IA de NPCs e movimento de personagens.
+                    <%= currentLang === 'pt' ?
+                        'Procuro criar soluções eficientes, escaláveis e seguras, sempre com foco na experiência do utilizador. Tenho também grande interesse em desenvolvimento de jogos, em áreas como hitboxes, IA de NPCs e movimento de personagens.'
+                        :
+                        'I strive to create efficient, scalable, and secure solutions, always focusing on user experience. I am also greatly interested in game development, especially in areas such as hitboxes, NPC AI, and character movement.' %>
                 </p>
                 <div class="skills">
-                    <img src="/img/c.svg" alt="C" title="C" width="32">
-                    <img src="/img/cpp.svg" alt="C++" title="C++" width="32">
-                    <img src="/img/js.svg" alt="JavaScript" title="JavaScript" width="32">
-                    <img src="/img/python.svg" alt="Python" title="Python" width="32">
-                    <img src="/img/mysql.svg" alt="MySQL" title="MySQL" width="32">
-                    <img src="/img/html.svg" alt="HTML" title="HTML" width="32">
-                    <img src="/img/css.svg" alt="CSS" title="CSS" width="32">
-                    <img src="/img/react.svg" alt="React" title="React" width="32">
-                    <img src="/img/nodejs.svg" alt="Node.js" title="Node.js" width="32">
-                    <img src="/img/net.svg" alt=".NET" title=".NET" width="32">
+                    <img src="/Imagens/c.png" alt="C" title="C" width="30">
+                    <img src="/Imagens/c++.png" alt="C++" title="C++" width="30">
+                    <img src="/Imagens/csharp.png" alt="C#" title="C#" width="30">
+                    <img src="/Imagens/javascript.png" alt="JavaScript" title="JavaScript" width="30">
+                    <img src="/Imagens/php.png" alt="PHP" title="PHP" width="30">
+                    <img src="/Imagens/python.png" alt="Python" title="Python" width="30">
+                    <img src="/Imagens/mysql.png" alt="MySQL" title="MySQL" width="30">
+                    <img src="/Imagens/react.png" alt="React" title="React" width="30">
+                    <img src="/Imagens/nodejs.png" alt="Node.js" title="Node.js" width="30">
+                    <img src="/Imagens/dotnet.png" alt=".NET" title=".NET" width="30">
+                    <img src="/Imagens/blazor.png" alt="Blazor" title="Blazor" width="30">
+                    <img src="/Imagens/expressjs.png" alt="ExpressJS" title="ExpressJS" width="30">
                 </div>
-                <a href="/contactos" class="hire-btn">Hire Me</a>
+                <a href="/contactos" class="hire-btn"><%= currentLang === 'pt' ? 'Hire Me' : 'Hire Me' %></a>
             </div>
             <div class="chatbot-button" id="chatbotButton">
-                <img src="/img/chatbot.svg" alt="Chatbot" width="28" height="28">
+                <img src="/Imagens/chatbot.png" alt="Chatbot" width="38" height="38">
             </div>
             <div class="chatbot-box" id="chatbotBox">
                 <div class="chatbot-header">
-                    ChatBot
+                    <%= currentLang === 'pt' ? 'ChatBot' : 'ChatBot' %>
                     <span class="chatbot-close" id="chatbotClose">&times;</span>
                 </div>
                 <div class="chatbot-body">
-                    <p>Olá! Como posso ajudar?</p>
-                    <!-- Aqui pode adicionar o chat real ou simulado -->
+                    <p><%= currentLang === 'pt' ? 'Olá! Como posso ajudar?' : 'Hello! How can I help?' %></p>
                 </div>
             </div>
         </section>
-    <footer>
-        <div class="footer-copy">
-            &copy; 2025 Francisco Henriques. Todos os direitos reservados.
-        </div>
-    </footer>
+    </main>
 </body>
-
-
 </html>
