@@ -7,6 +7,8 @@ const path = require("path");
 
 const app = express();
 
+app.use('/public', express.static(path.join(__dirname, 'public')));
+
 // Session middleware (required for passport.session)
 app.use(session({
     secret: "your_secret_key",
@@ -29,15 +31,18 @@ app.use(express.json());
 app.set("view engine", "ejs");
 
 app.get('/', (req, res) => {
-    res.redirect('/main');
+    res.redirect('/home');
 });
-
 // Routes
 const routes = [
     require("./Routes/MainRouter"),
 ];
 
 routes.forEach(route => app.use(route));
+
+app.use((req, res, next) => {
+    res.redirect('/home');
+});
 
 // Error handling
 app.use((err, req, res, next) => {

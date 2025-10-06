@@ -7,8 +7,8 @@ router.get('/', (req, res) => {
     res.render('index');
 });
 
-router.get('/main', (req, res) => {
-    res.render('main');
+router.get('/home', (req, res) => {
+    res.render('Main', { currentPath: req.path });
 });
 
 module.exports = router;
