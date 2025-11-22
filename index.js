@@ -29,6 +29,11 @@ app.get('/set-language/:lang', (req, res) => {
 app.use(cookieParser());
 
 app.use((req, res, next) => {
+    res.locals.currentPath = req.path;
+    next();
+});
+
+app.use((req, res, next) => {
     let langCookie = req.cookies.lang;
     if (langCookie !== 'pt' && langCookie !== 'en') {
         langCookie = 'pt'; // default

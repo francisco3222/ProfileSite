@@ -1,0 +1,271 @@
+<!-- File: `views/Servicos.ejs` -->
+<!DOCTYPE html>
+<html lang="<%= currentLang === 'en' ? 'en' : 'pt' %>">
+<head>
+    <meta charset="UTF-8">
+    <title><%= currentLang === 'pt' ? 'Serviços - Henriques.DEV' : 'Services - Henriques.DEV' %></title>
+    <link rel="stylesheet" href="/CSS/Main.css">
+    <link rel="stylesheet" href="/CSS/Services.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<main>
+    <%- include('navBar') %>
+
+    <section class="services" style="padding:4rem 6%; min-height:80vh; background:#000;">
+        <header class="services-hero">
+            <div class="hero-badge" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                    <path d="M12 2v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 18v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span><%= currentLang === 'pt' ? 'Serviços' : 'Services' %></span>
+            </div>
+
+            <h1 class="services-title">
+                Soluções Tecnológicas <span class="accent">Inovadoras</span>
+            </h1>
+
+            <p class="services-sub">
+                <%= currentLang === 'pt' ?
+                        'Transformo as suas ideias em produtos digitais excepcionais através de design criativo e tecnologia de ponta'
+                        :
+                        'Practical, secure solutions that boost your product — from interfaces to AI integrations.' %>
+            </p>
+        </header>
+
+        <div class="services-grid">
+            <article class="service-card" tabindex="0" aria-labelledby="svc-web-title" style="--accent:#ffd6d6;">
+                <div class="card-media" aria-hidden="true">
+                    <img src="/Imagens/desenvolvimentoweb.png" alt="">
+                </div>
+                <div class="card-body">
+                    <h3 id="svc-web-title"><%= currentLang === 'pt' ? 'Design System Moderno' : 'Modern Design System' %></h3>
+                    <p>
+                        <%= currentLang === 'pt' ? 'Sistema de design completo com componentes reutilizáveis e documentação.' : 'Complete design system with reusable components and docs.' %>
+                    </p>
+                    <div class="tags" aria-hidden="true">
+                        <span class="tag">Figma</span>
+                        <span class="tag">Design System</span>
+                        <span class="tag">UI/UX</span>
+                    </div>
+                </div>
+                <button class="svc-cta" aria-label="<%= currentLang === 'pt' ? 'Ver detalhes' : 'View details' %>">
+                    <!-- right arrow -->
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+
+            </article>
+
+            <article class="service-card" tabindex="0" aria-labelledby="svc-ecom-title" style="--accent:#ffd6d6;">
+                <div class="card-media" aria-hidden="true">
+                    <img src="/Imagens/jogosdesenvolvimento.png" alt="">
+                </div>
+                <div class="card-body">
+                    <h3 id="svc-ecom-title"><%= currentLang === 'pt' ? 'Plataforma E‑commerce' : 'E‑commerce Platform' %></h3>
+                    <p>
+                        <%= currentLang === 'pt' ? 'Loja online completa com carrinho, pagamentos e gestão de produtos.' : 'Full online store with cart, payments, and product management.' %>
+                    </p>
+                    <div class="tags" aria-hidden="true">
+                        <span class="tag">React</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">E‑commerce</span>
+                    </div>
+                </div>
+                <button class="svc-cta" aria-label="<%= currentLang === 'pt' ? 'Ver detalhes' : 'View details' %>">
+                    <!-- right arrow -->
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+
+            </article>
+
+            <article class="service-card" tabindex="0" aria-labelledby="svc-ecom-title" style="--accent:#ffd6d6;">
+                <div class="card-media" aria-hidden="true">
+                    <img src="/Imagens/jogosdesenvolvimento.png" alt="">
+                </div>
+                <div class="card-body">
+                    <h3 id="svc-ecom-title"><%= currentLang === 'pt' ? 'Plataforma E‑commerce' : 'E‑commerce Platform' %></h3>
+                    <p>
+                        <%= currentLang === 'pt' ? 'Loja online completa com carrinho, pagamentos e gestão de produtos.' : 'Full online store with cart, payments, and product management.' %>
+                    </p>
+                    <div class="tags" aria-hidden="true">
+                        <span class="tag">React</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">E‑commerce</span>
+                    </div>
+                </div>
+                <button class="svc-cta" aria-label="<%= currentLang === 'pt' ? 'Ver detalhes' : 'View details' %>">
+                    <!-- right arrow -->
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </article>
+
+            <article class="service-card" tabindex="0" aria-labelledby="svc-ai-title" style="--accent:rgb(255,214,214);">
+                <div class="card-media" aria-hidden="true">
+                    <img src="/Imagens/desenvolvimentoIA.png" alt="">
+                </div>
+                <div class="card-body">
+                    <h3 id="svc-ai-title"><%= currentLang === 'pt' ? 'App Mobile Fitness' : 'Mobile App & AI' %></h3>
+                    <p>
+                        <%= currentLang === 'pt' ? 'Aplicação mobile para tracking de exercícios, nutrição e automação.' : 'Mobile app for tracking exercises, nutrition and automation.' %>
+                    </p>
+                    <div class="tags" aria-hidden="true">
+                        <span class="tag">Mobile</span>
+                        <span class="tag">React Native</span>
+                        <span class="tag">AI</span>
+                    </div>
+                </div>
+                <button class="svc-cta" aria-label="<%= currentLang === 'pt' ? 'Ver detalhes' : 'View details' %>">
+                    <!-- right arrow -->
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+
+            </article>
+            <article class="service-card" tabindex="0" aria-labelledby="svc-ai-title" style="--accent:rgb(255,214,214);">
+                <div class="card-media" aria-hidden="true">
+                    <img src="/Imagens/desenvolvimentoIA.png" alt="">
+                </div>
+                <div class="card-body">
+                    <h3 id="svc-ai-title"><%= currentLang === 'pt' ? 'App Mobile Fitness' : 'Mobile App & AI' %></h3>
+                    <p>
+                        <%= currentLang === 'pt' ? 'Aplicação mobile para tracking de exercícios, nutrição e automação.' : 'Mobile app for tracking exercises, nutrition and automation.' %>
+                    </p>
+                    <div class="tags" aria-hidden="true">
+                        <span class="tag">Mobile</span>
+                        <span class="tag">React Native</span>
+                        <span class="tag">AI</span>
+                    </div>
+                </div>
+                <button class="svc-cta" aria-label="<%= currentLang === 'pt' ? 'Ver detalhes' : 'View details' %>">
+                    <!-- right arrow -->
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+
+            </article>
+            <article class="service-card" tabindex="0" aria-labelledby="svc-ai-title" style="--accent:rgb(255,214,214);">
+                <div class="card-media" aria-hidden="true">
+                    <img src="/Imagens/desenvolvimentoIA.png" alt="">
+                </div>
+                <div class="card-body">
+                    <h3 id="svc-ai-title"><%= currentLang === 'pt' ? 'App Mobile Fitness' : 'Mobile App & AI' %></h3>
+                    <p>
+                        <%= currentLang === 'pt' ? 'Aplicação mobile para tracking de exercícios, nutrição e automação.' : 'Mobile app for tracking exercises, nutrition and automation.' %>
+                    </p>
+                    <div class="tags" aria-hidden="true">
+                        <span class="tag">Mobile</span>
+                        <span class="tag">React Native</span>
+                        <span class="tag">AI</span>
+                    </div>
+                </div>
+                <button class="svc-cta" aria-label="<%= currentLang === 'pt' ? 'Ver detalhes' : 'View details' %>">
+                    <!-- right arrow -->
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+
+            </article>
+
+            <article class="service-card" tabindex="0" aria-labelledby="svc-ai-title" style="--accent:rgb(255,214,214);">
+                <div class="card-media" aria-hidden="true">
+                    <img src="/Imagens/desenvolvimentoIA.png" alt="">
+                </div>
+                <div class="card-body">
+                    <h3 id="svc-ai-title"><%= currentLang === 'pt' ? 'App Mobile Fitness' : 'Mobile App & AI' %></h3>
+                    <p>
+                        <%= currentLang === 'pt' ? 'Aplicação mobile para tracking de exercícios, nutrição e automação.' : 'Mobile app for tracking exercises, nutrition and automation.' %>
+                    </p>
+                    <div class="tags" aria-hidden="true">
+                        <span class="tag">Mobile</span>
+                        <span class="tag">React Native</span>
+                        <span class="tag">AI</span>
+                    </div>
+                </div>
+                <button class="svc-cta" aria-label="<%= currentLang === 'pt' ? 'Ver detalhes' : 'View details' %>">
+                    <!-- right arrow -->
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+
+            </article>
+            <article class="service-card" tabindex="0" aria-labelledby="svc-ai-title" style="--accent:rgb(255,214,214);">
+                <div class="card-media" aria-hidden="true">
+                    <img src="/Imagens/desenvolvimentoIA.png" alt="">
+                </div>
+                <div class="card-body">
+                    <h3 id="svc-ai-title"><%= currentLang === 'pt' ? 'App Mobile Fitness' : 'Mobile App & AI' %></h3>
+                    <p>
+                        <%= currentLang === 'pt' ? 'Aplicação mobile para tracking de exercícios, nutrição e automação.' : 'Mobile app for tracking exercises, nutrition and automation.' %>
+                    </p>
+                    <div class="tags" aria-hidden="true">
+                        <span class="tag">Mobile</span>
+                        <span class="tag">React Native</span>
+                        <span class="tag">AI</span>
+                    </div>
+                </div>
+                <button class="svc-cta" aria-label="<%= currentLang === 'pt' ? 'Ver detalhes' : 'View details' %>">
+                    <!-- right arrow -->
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+
+            </article>
+
+
+
+
+
+        </div>
+
+
+
+        <div style="max-width:500px; margin:2.5rem auto 0; padding:2rem; border-radius:18px;
+            background: linear-gradient(135deg, rgba(101,5,5,0.55), rgba(14,14,20,0.35));
+            border: 1px solid rgba(242,77,77,0.12);
+            box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+            backdrop-filter: blur(6px);
+            text-align:center; display: flex; flex-direction: column; align-items: center;">
+
+            <h2 style="color:#fff; font-size:1.35rem; margin-bottom:0.5rem; font-weight:600;">
+                Tem um projeto em mente?
+            </h2>
+            <p style="color:rgba(255,255,255,0.78); margin-bottom:1.25rem; font-size:1rem;">
+                Vamos trabalhar juntos para criar algo extraordinário
+            </p>
+
+            <a href="/contactos" style="display:inline-block; padding:10px 28px; border-radius:999px;
+                               background: linear-gradient(90deg, rgba(210,0,0,0.88) 0%, #f04c4c 60%);
+                               color:#fff; text-decoration:none; font-weight:700;
+                               box-shadow: 0 10px 30px rgba(255,0,0,0.18);
+                               transition: transform 180ms ease, box-shadow 180ms ease;">
+                Contacte‑me
+            </a>
+        </div>
+    </section>
+</main>
+
+<script src="/JS/servicos.js" defer></script>
+</body>
+</html>

@@ -4,34 +4,14 @@
     <meta charset="UTF-8">
     <title>Henriques.DEV</title>
     <link rel="stylesheet" href="/CSS/Main.css">
+
     <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">Henriques.<span>DEV</span></div>
-        <ul class="nav-links">
-            <li><a href="/home" class="<%= currentPath === '/home' ? 'active' : '' %>"><%= currentLang === 'pt' ? 'Home' : 'Home' %></a></li>
-            <li><a href="/servicos" class="<%= currentPath === '/servicos' ? 'active' : '' %>"><%= currentLang === 'pt' ? 'Serviços' : 'Services' %></a></li>
-            <li><a href="/projetos" class="<%= currentPath === '/projetos' ? 'active' : '' %>"><%= currentLang === 'pt' ? 'Projetos' : 'Projects' %></a></li>
-            <li><a href="/contactos" class="<%= currentPath === '/contactos' ? 'active' : '' %>"><%= currentLang === 'pt' ? 'Contactos' : 'Contacts' %></a></li>
-            <div class="lang-switch">
-              <% if(currentLang === 'pt') { %>
-                <a href="/set-language/en" class="lang-btn">
-                  <img src="/Imagens/en.png" alt="EN" width="49" height="22">
-                </a>
-              <% } else { %>
-                <a href="/set-language/pt" class="lang-btn">
-                  <img src="/Imagens/pt.png" alt="PT" width="49" height="22">
-                </a>
-              <% } %>
-            </div>
-        </ul>
-    </nav>
     <main>
-        <div class="arrow-right">
-            <a href="/servicos" aria-label="Go to Services"><img src="/Imagens/arrow-right.png" alt="Arrow Right" width="120"></a>
-        </div>
+        <%- include('navBar')%>
+
         <section class="hero">
             <div class="hero-left">
                 <img id="profile-pic" src="/Imagens/portrait.png" alt="Francisco Henriques" class="profile-pic">
@@ -43,6 +23,15 @@
                 </div>
             </div>
             <div class="hero-right">
+                <div class="hero-badge" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                        <path d="M12 2v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 18v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span><%= currentLang === 'pt' ? 'Disponível para novos Desafios' : 'Prepared for new challenges' %></span>
+                </div>
                 <h2>
                     <%= currentLang === 'pt' ? 'Olá' : 'Hello' %> <span aria-label="wave" role="img">👋</span>,
                     <%= currentLang === 'pt' ? 'sou o' : 'I am' %> <span class="highlight1">Francisco</span>
