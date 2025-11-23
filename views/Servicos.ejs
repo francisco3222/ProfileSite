@@ -11,7 +11,9 @@
 <body>
 <main>
     <%- include('navBar') %>
-
+    <div class="arrow-right">
+        <a href="/projetos" aria-label="Go to Services"><img src="/Imagens/arrow-right.png" alt="Arrow Right" width="120"></a>
+    </div>
     <section class="services" style="padding:4rem 6%; min-height:80vh; background:#000;">
         <header class="services-hero">
             <div class="hero-badge" aria-hidden="true">
@@ -37,7 +39,7 @@
         </header>
 
         <div class="services-grid">
-            <article class="service-card" tabindex="0" aria-labelledby="svc-web-title" style="--accent:#ffd6d6;">
+            <article class="service-card" tabindex="0" aria-labelledby="svc-web-title" style="--accent:#ffffff;">
                 <div class="card-media" aria-hidden="true">
                     <img src="/Imagens/desenvolvimentoweb.png" alt="">
                 </div>
@@ -62,7 +64,7 @@
 
             </article>
 
-            <article class="service-card" tabindex="0" aria-labelledby="svc-ecom-title" style="--accent:#ffd6d6;">
+            <article class="service-card" tabindex="0" aria-labelledby="svc-ecom-title" style="--accent:#ffffff;">
                 <div class="card-media" aria-hidden="true">
                     <img src="/Imagens/jogosdesenvolvimento.png" alt="">
                 </div>
@@ -87,7 +89,7 @@
 
             </article>
 
-            <article class="service-card" tabindex="0" aria-labelledby="svc-ecom-title" style="--accent:#ffd6d6;">
+            <article class="service-card" tabindex="0" aria-labelledby="svc-ecom-title" style="--accent:#ffffff;">
                 <div class="card-media" aria-hidden="true">
                     <img src="/Imagens/jogosdesenvolvimento.png" alt="">
                 </div>
@@ -232,14 +234,8 @@
                 </button>
 
             </article>
-
-
-
-
 
         </div>
-
-
 
         <div style="max-width:500px; margin:2.5rem auto 0; padding:2rem; border-radius:18px;
             background: linear-gradient(135deg, rgba(101,5,5,0.55), rgba(14,14,20,0.35));
@@ -262,10 +258,11 @@
                                transition: transform 180ms ease, box-shadow 180ms ease;">
                 Contacte‑me
             </a>
+
         </div>
+        <%- include('ChatBot')%>
     </section>
 </main>
 
-<script src="/JS/servicos.js" defer></script>
 </body>
 </html>

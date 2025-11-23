@@ -153,7 +153,7 @@ html, body, * {
     right: 0;
     bottom: 0;
     height: 6px;
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, var(--accent) 40%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(90deg, rgb(255, 255,255, 0) 0%, rgba(201, 0, 25, 0.94) 40%, rgb(217, 0, 0) 40%, rgb(255, 69, 69) 40%,rgba(201, 0, 25, 0.94) 40%, rgba(255,255,255,0) 100%);
     pointer-events: none;
 }
 

@@ -390,62 +390,6 @@ footer {
     font-size: 0.95rem;
 }
 
-/* Floating Chatbot Button */
-.chatbot-button {
-    position: fixed;
-    bottom: 30px;
-    right: 60px;
-    color: #fff;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 1000;
-    transition: background 0.3s, transform 0.2s;
-}
-.chatbot-button:hover {
-    transform: scale(1.08);
-}
-/* Chatbot Pop-up Box */
-.chatbot-box {
-    display: none;
-    position: fixed;
-    bottom: 100px;
-    right: 30px;
-    width: 300px;
-    background: #222;
-    color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.23);
-    z-index: 1001;
-    font-size: 1rem;
-}
-.chatbot-header {
-    background: #f24d4d;
-    color: #fff;
-    padding: 1rem;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-}
-.chatbot-close {
-    cursor: pointer;
-    font-size: 1.4rem;
-    color: #fff;
-    padding-left: 1rem;
-}
-.chatbot-body {
-    padding: 1rem;
-    background: #ff0000;
-    min-height: 80px;
-}
 
 .lang-btn{
     background-color: transparent;

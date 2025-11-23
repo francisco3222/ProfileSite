@@ -11,7 +11,9 @@
 <body>
     <main>
         <%- include('navBar')%>
-
+        <div class="arrow-right">
+            <a href="/servicos" aria-label="Go to Services"><img src="/Imagens/arrow-right.png" alt="Arrow Right" width="120"></a>
+        </div>
         <section class="hero">
             <div class="hero-left">
                 <img id="profile-pic" src="/Imagens/portrait.png" alt="Francisco Henriques" class="profile-pic">
@@ -67,18 +69,8 @@
                 </div>
                 <a href="/contactos" class="hire-btn"><%= currentLang === 'pt' ? 'Hire Me' : 'Hire Me' %></a>
             </div>
-            <div class="chatbot-button" id="chatbotButton">
-                <img src="/Imagens/chatbot.png" alt="Chatbot" width="38" height="38">
-            </div>
-            <div class="chatbot-box" id="chatbotBox">
-                <div class="chatbot-header">
-                    <%= currentLang === 'pt' ? 'ChatBot' : 'ChatBot' %>
-                    <span class="chatbot-close" id="chatbotClose">&times;</span>
-                </div>
-                <div class="chatbot-body">
-                    <p><%= currentLang === 'pt' ? 'Olá! Como posso ajudar?' : 'Hello! How can I help?' %></p>
-                </div>
-            </div>
+
+            <%- include('ChatBot')%>
         </section>
     </main>
 </body>

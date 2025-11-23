@@ -5,10 +5,9 @@ const compression = require("compression");
 const session = require("express-session");
 const path = require("path");
 const cookieParser = require("cookie-parser");
-
 const app = express();
 
-
+require('dotenv').config();
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(session({
@@ -59,6 +58,9 @@ app.get('/', (req, res) => {
 const routes = [
     require("./Routes/MainRouter"),
 ];
+
+const chatbotRouter = require('./Routes/ChatbotRouter');
+app.use('/', chatbotRouter);
 
 routes.forEach(route => app.use(route));
 
