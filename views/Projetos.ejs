@@ -26,31 +26,31 @@
                 hoverImage: null,
                 demo: '#',
                 repo: 'https://github.com/francisco3222/SpaceSoup',
-                tags: ['Figma','Design System','UI/UX']
+                tags: ['DBW','HTML','CSS','JS','API','BD']
             },
             {
-                slug: 'app-mobile',
-                title: currentLang === 'pt' ? 'App Mobile Intuitivo' : 'Intuitive Mobile App',
+                slug: 'barbie',
+                title: currentLang === 'pt' ? 'Jogo BarbieGirl' :  'BarbieGirl Game',
                 description: currentLang === 'pt'
-                        ? 'Aplicação móvel com UX focado em desempenho e acessibilidade.'
-                        : 'Mobile app focused on performance and accessibility.',
-                image: '/Imagens/proj2.jpg',
-                hoverImage: '/Imagens/proj2-hover.jpg',
+                        ? 'Jogo interativo inspirado no filme BarbieGirl e Oppenheimer, onde podes explorar diferentes cenários em 2D.'
+                        : 'Interactive game inspired by the BarbieGirl and Oppenheimer movie, where you can explore different 2D scenarios.',
+                image: '/Imagens/barbie.png',
+                hoverImage: null,
                 demo: '#',
-                repo: '#',
-                tags: ['React Native','Mobile']
+                repo: 'https://github.com/francisco3222/BarbieGirlGame',
+                tags: ['Java','2D','POO', 'GameDev','Design']
             },
             {
-                slug: 'dashboard',
-                title: currentLang === 'pt' ? 'Dashboard Analítico' : 'Analytical Dashboard',
+                slug: 'AdelinoFootballManager',
+                title: currentLang === 'pt' ? 'Jogo FootballManager' : 'FootballManager Game',
                 description: currentLang === 'pt'
-                        ? 'Painel interativo com visualizações e filtros avançados.'
-                        : 'Interactive dashboard with advanced visualizations and filters.',
-                image: '/Imagens/proj3.jpg',
-                hoverImage: '/Imagens/proj3-hover.jpg',
+                        ? 'Jogo interativo inspirado no Jogo FootballManager onde podes gerir o teu próprio clube de futebol.'
+                        : 'Interactive game inspired by the FootballManager game where you can manage your own football club.',
+                image: '/Imagens/footballmanager.png',
+                hoverImage: null,
                 demo: '#',
-                repo: '#',
-                tags: ['DataViz','React','UX']
+                repo: 'https://github.com/francisco3222/AdelinoFootballManager',
+                tags: ['Java','Terminal','TXT','POO']
             },
             {
                 slug: 'landing',
@@ -59,7 +59,7 @@
                         ? 'Landing page otimizada para conversões e A/B testing.'
                         : 'Landing page optimized for conversions and A/B testing.',
                 image: '/Imagens/proj4.jpg',
-                hoverImage: '/Imagens/proj4-hover.jpg',
+                hoverImage: null,
                 demo: '#',
                 repo: '#',
                 tags: ['Marketing','SEO','Design']
@@ -76,7 +76,12 @@
                         <% } %>
                         <div class="proj-overlay">
                             <a href="<%= p.demo %>" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Demo">🔗</a>
-                            <a href="<%= p.repo %>" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Repo">🐱</a>
+                            <a href="<%= p.repo %>" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Repo">
+                                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="false" focusable="false">
+                                    <title>GitHub</title>
+                                    <path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.744.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.809 1.305 3.495.998.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.335-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.135-.303-.54-1.524.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.874.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.435.375.825 1.11.825 2.24 0 1.62-.015 2.92-.015 3.32 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297 24 5.67 18.627.297 12 .297z"/>
+                                </svg>
+                            </a>
                         </div>
                     </div>
 

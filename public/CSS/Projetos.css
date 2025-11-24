@@ -120,9 +120,9 @@
     background: linear-gradient(180deg, var(--media-overlay-top), var(--media-overlay-bottom));
 }
 .proj-media img{
-    width: 150%;
-    height:150%;
-    left: -25%;
+    width: 118%;
+    height:125%;
+    left:-9%;
     position: absolute;
     top: -10%;
     object-fit:cover;
@@ -218,35 +218,15 @@
 
 /* Exemplo de overrides por projeto (coloca no mesmo ficheiro ou num bloco específico) */
 /* Design System */
-#proj-design-system{
-    --bottom-grad-start: #ff5fae;
-    --bottom-grad-end: #ff2d6f;
-    --halo-start: #3b0b57;
-    --halo-mid: #2b0b4f;
-    --halo-end: #ff2d6f;
-    --accent-pink: #ff2d6f;
+#proj-barbie{
+    --bottom-grad-start: #ff5fe4;
+    --bottom-grad-end: #ff2dce;
+    --halo-start: #410b57;
+    --halo-mid: #380b4f;
+    --halo-end: #ff2d8b;
+    --accent-pink: #ff2d9d;
 }
 
-/* App Mobile */
-#proj-app-mobile{
-    --bottom-grad-start: #3bd1ff;
-    --bottom-grad-end: #0066ff;
-    --halo-start: #0b3b57;
-    --halo-mid: #004f8a;
-    --halo-end: #0066ff;
-    --accent-pink: #00a7ff;
-    --drop-shadow: none;
-}
-
-/* Dashboard */
-#proj-dashboard{
-    --bottom-grad-start: #7bffb2;
-    --bottom-grad-end: #2fdc73;
-    --halo-start: #1b3f2d;
-    --halo-mid: #127f4a;
-    --halo-end: #2fdc73;
-    --accent-pink: #7ef5b0;
-}
 
 /* SpaceSoup (exemplo com cor forte e sem box shadow no cartão) */
 #proj-SpaceSoup{
@@ -256,6 +236,19 @@
     --halo-mid: #183b8f;
     --halo-end: #2dff6f;
     --drop-shadow: none;
+    --accent-pink: #2da1ff;
+    color: white;
+    /* garante override caso existam outras regras */
+    /* se quiseres ainda um drop shadow externo, usa --drop-shadow */
+}
+#proj-AdelinoFootballManager{
+    --bottom-grad-start: #2d2f3d;!important;
+    --bottom-grad-end: #e7de3e;
+    --halo-start: #ad8521;
+    --halo-mid: #b6b03e;
+    --halo-end: #a88932;
+    --drop-shadow: none;
+    --accent-pink: #c9b61d;
     color: white;
     /* garante override caso existam outras regras */
     /* se quiseres ainda um drop shadow externo, usa --drop-shadow */
