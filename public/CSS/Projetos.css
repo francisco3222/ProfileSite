@@ -1,0 +1,268 @@
+:root{
+    /* texto / contraste */
+    --text: #e6e6ef;
+    --muted: rgba(230,230,239,0.65);
+
+    /* cartão / fundo */
+    --card-bg-top: rgba(17,6,35,0.7);
+    --card-bg-bottom: rgba(12,4,28,0.85);
+    --card-bg: linear-gradient(180deg, var(--card-bg-top), var(--card-bg-bottom));
+    --card-border: rgba(255,255,255,0.04);
+
+    /* accents */
+    --accent-pink: #ff4a4a;
+
+    /* barra inferior (pode ser override por id) */
+    --bottom-grad-start: #ff5f5f;
+    --bottom-grad-end: #ff2d2d;
+    --bottom-grad: linear-gradient(90deg, var(--bottom-grad-start), var(--bottom-grad-end));
+
+    /* halo exterior (wrapper) */
+    --halo-start: rgba(24,6,79,0.9);
+    --halo-mid: rgba(42,12,72,0.9);
+    --halo-end: rgba(255,45,111,0.95);
+    --halo-blur: 10px;
+    --halo-opacity: 0.95;
+
+    /* fallback para drop-shadow quando se preferir */
+    --drop-shadow: none;
+
+    /* media overlay */
+    --media-overlay-top: rgba(0,0,0,0.12);
+    --media-overlay-bottom: rgba(0,0,0,0.25);
+
+    /* icon button */
+    --icon-bg: rgba(255,255,255,0.07);
+    --icon-bg-hover: rgba(255,255,255,0.12);
+    --icon-shadow: 0 8px 30px rgba(5,5,20,0.5);
+
+    /* tags */
+    --tag-bg: rgba(255,255,255,0.03);
+    --tag-border: rgba(255,255,255,0.04);
+    --tag-text: rgba(230,230,239,0.8);
+
+    /* outras sombras/valores */
+    --card-shadow: none;
+}
+
+/* Grid */
+.projetos-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:2rem;
+    padding:2rem 6%;
+}
+
+/* Wrapper que cria o halo exterior */
+.proj-wrap{
+    position:relative;
+    border-radius:14px;
+    padding:8px; /* espaço para o halo "sair" sem cortar */
+    background:transparent;
+    /* opcional: permitir um drop-shadow mais simples via variavel */
+    filter: drop-shadow(var(--drop-shadow));
+}
+
+/* pseudo-elemento que cria o halo gradient suave atrás do cartão */
+.proj-wrap::before{
+    content:"";
+    position:absolute;
+    left:-8px;
+    right:-8px;
+    top:-8px;
+    bottom:-8px;
+    border-radius: calc(14px + 8px);
+    background: linear-gradient(90deg, var(--halo-start), var(--halo-mid), var(--halo-end));
+    filter: blur(var(--halo-blur));
+    opacity: var(--halo-opacity);
+    z-index:0;
+    pointer-events:none;
+    mix-blend-mode: normal;
+}
+
+/* Card */
+.proj-card{
+    position:relative;
+    z-index:1;
+    background:var(--card-bg);
+    border-radius:14px;
+    overflow:hidden;
+    border:1px solid var(--card-border);
+    display:flex;
+    flex-direction:column;
+    transition:transform .18s ease, box-shadow .18s ease;
+    box-shadow: var(--card-shadow); /* normalmente none */
+}
+.proj-card:hover{
+    transform: translateY(-6px);
+}
+
+/* bottom gradient bar (interna ao cartão) */
+.proj-card::after{
+    content:"";
+    position:absolute;
+    left:10px;
+    right:10px;
+    bottom:6px;
+    height:6px;
+    border-radius:8px;
+    /* usar diretamente os vars start/end para garantir overrides por id */
+    background: linear-gradient(90deg, var(--bottom-grad-start), var(--bottom-grad-end));
+    pointer-events:none;
+    z-index:2;
+}
+
+/* Media (images) */
+.proj-media{
+    position:relative;
+    height:220px;
+    overflow:hidden;
+    background: linear-gradient(180deg, var(--media-overlay-top), var(--media-overlay-bottom));
+}
+.proj-media img{
+    width: 150%;
+    height:150%;
+    left: -25%;
+    position: absolute;
+    top: -10%;
+    object-fit:cover;
+    display:block;
+    transition:transform .6s cubic-bezier(.2,.9,.2,1), opacity .35s ease, filter .35s ease;
+}
+.proj-media img.thumb-hover{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    transform:scale(1.03);
+}
+.proj-card:hover .proj-media img.thumb{
+    transform:scale(1.06);
+    filter:brightness(.6) saturate(.95);
+}
+.proj-card:hover .proj-media img.thumb-hover{
+    opacity:1;
+    transform:scale(1.02);
+}
+
+/* Overlay icons */
+.proj-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:1rem;
+    pointer-events:none;
+    opacity:0;
+    transition:opacity .22s ease, transform .25s ease;
+    transform:translateY(6px);
+    z-index:3;
+}
+.proj-card:hover .proj-overlay{
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+}
+
+.icon-btn{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    background: var(--icon-bg);
+    display:inline-grid;
+    place-items:center;
+    color:var(--text);
+    text-decoration:none;
+    transition:transform .14s ease, background .14s ease;
+    box-shadow: var(--icon-shadow);
+}
+.icon-btn:hover{
+    transform:translateY(-6px);
+    background: var(--icon-bg-hover);
+}
+
+/* Body */
+.proj-body{
+    padding:1.4rem 1.6rem 2rem 1.6rem;
+    color:var(--text);
+    display:flex;
+    flex-direction:column;
+    gap:.6rem;
+}
+.proj-title{
+    font-size:1.2rem;
+    margin:0;
+    color:var(--text);
+    transition:color .18s ease;
+}
+.proj-card:hover .proj-title{ color:var(--accent-pink); }
+
+.proj-desc{
+    margin:0;
+    color:var(--muted);
+    line-height:1.5;
+    margin-top:.6rem;
+    font-size:0.95rem;
+}
+
+/* Tags */
+.proj-tags{ display:flex; gap:.5rem; flex-wrap:wrap; margin-top:1rem; }
+.tag{
+    background: var(--tag-bg);
+    border:1px solid var(--tag-border);
+    color: var(--tag-text);
+    padding:.38rem .6rem;
+    border-radius:999px;
+    font-size:.82rem;
+}
+
+/* Exemplo de overrides por projeto (coloca no mesmo ficheiro ou num bloco específico) */
+/* Design System */
+#proj-design-system{
+    --bottom-grad-start: #ff5fae;
+    --bottom-grad-end: #ff2d6f;
+    --halo-start: #3b0b57;
+    --halo-mid: #2b0b4f;
+    --halo-end: #ff2d6f;
+    --accent-pink: #ff2d6f;
+}
+
+/* App Mobile */
+#proj-app-mobile{
+    --bottom-grad-start: #3bd1ff;
+    --bottom-grad-end: #0066ff;
+    --halo-start: #0b3b57;
+    --halo-mid: #004f8a;
+    --halo-end: #0066ff;
+    --accent-pink: #00a7ff;
+    --drop-shadow: none;
+}
+
+/* Dashboard */
+#proj-dashboard{
+    --bottom-grad-start: #7bffb2;
+    --bottom-grad-end: #2fdc73;
+    --halo-start: #1b3f2d;
+    --halo-mid: #127f4a;
+    --halo-end: #2fdc73;
+    --accent-pink: #7ef5b0;
+}
+
+/* SpaceSoup (exemplo com cor forte e sem box shadow no cartão) */
+#proj-SpaceSoup{
+    --bottom-grad-start: #184eff;!important;
+    --bottom-grad-end: #68ff2d;
+    --halo-start: #10204b;
+    --halo-mid: #183b8f;
+    --halo-end: #2dff6f;
+    --drop-shadow: none;
+    color: white;
+    /* garante override caso existam outras regras */
+    /* se quiseres ainda um drop shadow externo, usa --drop-shadow */
+}
+
+/* Responsividade */
+@media (max-width:520px){
+    .proj-media{ height:170px; }
+    .icon-btn{ width:48px; height:48px; }
+}

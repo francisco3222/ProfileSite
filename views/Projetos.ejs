@@ -1,0 +1,101 @@
+<!-- File: `views/Servicos.ejs` -->
+<html lang="<%= currentLang === 'en' ? 'en' : 'pt' %>">
+<head>
+    <meta charset="UTF-8">
+    <title><%= currentLang === 'pt' ? 'Serviços - Henriques.DEV' : 'Services - Henriques.DEV' %></title>
+    <link rel="stylesheet" href="/CSS/Main.css">
+    <link rel="stylesheet" href="/CSS/Projetos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<main>
+    <%- include('navBar') %>
+    <div class="arrow-right">
+        <a href="/contactos" aria-label="Go to Services"><img src="/Imagens/arrow-right.png" alt="Arrow Right" width="120"></a>
+    </div>
+
+    <section class="projetos-grid" aria-label="Projetos">
+        <% const projetos = [
+            {
+                slug: 'SpaceSoup',
+                title: currentLang === 'pt' ? 'SpaceSoup' : 'SpaceSoup',
+                description: currentLang === 'pt'
+                        ? 'Site sobre curiosidades espacias, poderás saber diversas curiosidades sobre o espaço e o nosso universo.'
+                        : 'Site about space curiosities with facts about the universe.',
+                image: '/Imagens/spacesoup.png',
+                hoverImage: null,
+                demo: '#',
+                repo: 'https://github.com/francisco3222/SpaceSoup',
+                tags: ['Figma','Design System','UI/UX']
+            },
+            {
+                slug: 'app-mobile',
+                title: currentLang === 'pt' ? 'App Mobile Intuitivo' : 'Intuitive Mobile App',
+                description: currentLang === 'pt'
+                        ? 'Aplicação móvel com UX focado em desempenho e acessibilidade.'
+                        : 'Mobile app focused on performance and accessibility.',
+                image: '/Imagens/proj2.jpg',
+                hoverImage: '/Imagens/proj2-hover.jpg',
+                demo: '#',
+                repo: '#',
+                tags: ['React Native','Mobile']
+            },
+            {
+                slug: 'dashboard',
+                title: currentLang === 'pt' ? 'Dashboard Analítico' : 'Analytical Dashboard',
+                description: currentLang === 'pt'
+                        ? 'Painel interativo com visualizações e filtros avançados.'
+                        : 'Interactive dashboard with advanced visualizations and filters.',
+                image: '/Imagens/proj3.jpg',
+                hoverImage: '/Imagens/proj3-hover.jpg',
+                demo: '#',
+                repo: '#',
+                tags: ['DataViz','React','UX']
+            },
+            {
+                slug: 'landing',
+                title: currentLang === 'pt' ? 'Landing Conversora' : 'Conversion Landing',
+                description: currentLang === 'pt'
+                        ? 'Landing page otimizada para conversões e A/B testing.'
+                        : 'Landing page optimized for conversions and A/B testing.',
+                image: '/Imagens/proj4.jpg',
+                hoverImage: '/Imagens/proj4-hover.jpg',
+                demo: '#',
+                repo: '#',
+                tags: ['Marketing','SEO','Design']
+            }
+        ]; %>
+
+        <% projetos.forEach(p => { %>
+            <div class="proj-wrap" id="proj-<%= p.slug %>">
+                <article class="proj-card" role="group" aria-labelledby="proj-<%= p.slug %>">
+                    <div class="proj-media">
+                        <img src="<%= p.image %>" alt="<%= p.title %>" class="thumb">
+                        <% if (p.hoverImage) { %>
+                            <img src="<%= p.hoverImage %>" alt="" class="thumb-hover">
+                        <% } %>
+                        <div class="proj-overlay">
+                            <a href="<%= p.demo %>" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Demo">🔗</a>
+                            <a href="<%= p.repo %>" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Repo">🐱</a>
+                        </div>
+                    </div>
+
+                    <div class="proj-body">
+                        <h3 class="proj-title" id="proj-<%= p.slug %>-title"><%= p.title %></h3>
+                        <p class="proj-desc"><%= p.description %></p>
+
+                        <div class="proj-tags">
+                            <% (p.tags || []).forEach(function(t){ %>
+                                <span class="tag"><%= t %></span>
+                            <% }) %>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        <% }) %>
+    </section>
+
+    <%- include('ChatBot') %>
+</main>
+</body>
+</html>

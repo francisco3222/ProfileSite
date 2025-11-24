@@ -27,12 +27,13 @@
             </div>
 
             <h1 class="services-title">
-                Soluções Tecnológicas <span class="accent">Inovadoras</span>
+                <%= currentLang === 'pt' ? 'Soluções Tecnológicas ' : 'Technology Solutions ' %>
+                <span class="accent"><%= currentLang === 'pt' ? 'Inovadoras' : 'Innovative' %></span>
             </h1>
 
             <p class="services-sub">
                 <%= currentLang === 'pt' ?
-                        'Transformo as suas ideias em produtos digitais excepcionais através de design criativo e tecnologia de ponta'
+                        'Transformo as suas ideias em produtos digitais excecionais através de design criativo e tecnologia de ponta'
                         :
                         'Practical, secure solutions that boost your product — from interfaces to AI integrations.' %>
             </p>

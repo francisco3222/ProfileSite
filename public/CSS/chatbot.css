@@ -67,7 +67,6 @@
     animation: chatbot-float 3200ms ease-in-out infinite;
     will-change: transform;
     outline: none;
-    background: linear-gradient(180deg, #f24d4d, #e03b3b);
     color: #fff;
     overflow: visible; /* allow pseudo-element ring */
 }
@@ -87,8 +86,8 @@
 /* image inside button */
 .chatbot-button img {
     display: block;
-    width: 38px;
-    height: 38px;
+    width: 45px;
+    height: 45px;
     transition: transform 220ms ease, filter 220ms ease;
     will-change: transform, filter;
 }

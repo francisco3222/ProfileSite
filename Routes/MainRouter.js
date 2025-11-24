@@ -15,4 +15,8 @@ router.get('/servicos', (req, res) => {
     res.render('Servicos', { currentPath: req.path });
 });
 
+router.get('/projetos', (req, res) => {
+    res.render('Projetos', { currentPath: req.path });
+});
+
 module.exports = router;
