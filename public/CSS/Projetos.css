@@ -242,13 +242,13 @@
     /* se quiseres ainda um drop shadow externo, usa --drop-shadow */
 }
 #proj-AdelinoFootballManager{
-    --bottom-grad-start: #2d2f3d;!important;
-    --bottom-grad-end: #e7de3e;
-    --halo-start: #ad8521;
-    --halo-mid: #b6b03e;
-    --halo-end: #a88932;
+    --bottom-grad-start: #f89d4a;!important;
+    --bottom-grad-end: #ef9036;
+    --halo-start: #e9732d;
+    --halo-mid: #e14722;
+    --halo-end: #8f3714;
     --drop-shadow: none;
-    --accent-pink: #c9b61d;
+    --accent-pink: #db7132;
     color: white;
     /* garante override caso existam outras regras */
     /* se quiseres ainda um drop shadow externo, usa --drop-shadow */
