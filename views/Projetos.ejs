@@ -13,6 +13,29 @@
     <div class="arrow-right">
         <a href="/contactos" aria-label="Go to Services"><img src="/Imagens/arrow-right.png" alt="Arrow Right" width="120"></a>
     </div>
+    <div>
+        <header class="projects-hero">
+            <div class="hero-badge" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                    <path d="M12 2v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 18v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span><%= currentLang === 'pt' ? 'Projetos' : 'Projects' %></span>
+            </div>
+
+            <h1 class="projects-title">
+                <%= currentLang === 'pt' ? 'Projetos ' : 'Developed ' %>
+                <span class="accent"><%= currentLang === 'pt' ? 'Desenvolvidos' : 'Projects' %></span>
+            </h1>
+            <p class="projects-subtitle">
+                <%= currentLang === 'pt'
+                    ? 'Aqui estão alguns dos meus projetos mais recentes. Sinta-se à vontade para explorar e conhecer mais sobre o meu trabalho.'
+                    : 'Here are some of my recent projects. Feel free to explore and learn more about my work.' %>
+        </header>
+    </div>
+
 
     <section class="projetos-grid" aria-label="Projetos">
         <% const projetos = [
@@ -99,8 +122,10 @@
             </div>
         <% }) %>
     </section>
-
+    <p class="projects-subtitle" id="project-p"> E muitos mais projetos incríveis em desenvolvimento... 🚀 </p>
     <%- include('ChatBot') %>
+    <%- include('Footer')%>
 </main>
+
 </body>
 </html>

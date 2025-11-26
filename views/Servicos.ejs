@@ -14,30 +14,31 @@
     <div class="arrow-right">
         <a href="/projetos" aria-label="Go to Services"><img src="/Imagens/arrow-right.png" alt="Arrow Right" width="120"></a>
     </div>
+
+    <header class="services-hero">
+        <div class="hero-badge" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                <path d="M12 2v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 18v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span><%= currentLang === 'pt' ? 'Serviços' : 'Services' %></span>
+        </div>
+
+        <h1 class="services-title">
+            <%= currentLang === 'pt' ? 'Soluções Tecnológicas ' : 'Technology Solutions ' %>
+            <span class="accent"><%= currentLang === 'pt' ? 'Inovadoras' : 'Innovative' %></span>
+        </h1>
+
+        <p class="services-sub">
+            <%= currentLang === 'pt' ?
+                    'Transformo as suas ideias em produtos digitais excecionais através de design criativo e tecnologia de ponta'
+                    :
+                    'Practical, secure solutions that boost your product — from interfaces to AI integrations.' %>
+        </p>
+    </header>
     <section class="services" style="padding:4rem 6%; min-height:80vh; background:#000;">
-        <header class="services-hero">
-            <div class="hero-badge" aria-hidden="true">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-                    <path d="M12 2v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M12 18v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M4 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M16 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span><%= currentLang === 'pt' ? 'Serviços' : 'Services' %></span>
-            </div>
-
-            <h1 class="services-title">
-                <%= currentLang === 'pt' ? 'Soluções Tecnológicas ' : 'Technology Solutions ' %>
-                <span class="accent"><%= currentLang === 'pt' ? 'Inovadoras' : 'Innovative' %></span>
-            </h1>
-
-            <p class="services-sub">
-                <%= currentLang === 'pt' ?
-                        'Transformo as suas ideias em produtos digitais excecionais através de design criativo e tecnologia de ponta'
-                        :
-                        'Practical, secure solutions that boost your product — from interfaces to AI integrations.' %>
-            </p>
-        </header>
 
         <div class="services-grid">
             <article class="service-card" tabindex="0" aria-labelledby="svc-web-title" style="--accent:#ffffff;">
@@ -263,6 +264,7 @@
         </div>
         <%- include('ChatBot')%>
     </section>
+    <%- include('Footer')%>
 </main>
 
 </body>
