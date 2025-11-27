@@ -1,0 +1,22 @@
+<html lang="<%= currentLang === 'en' ? 'en' : 'pt' %>">
+<head>
+    <meta charset="UTF-8">
+    <title><%= currentLang === 'pt' ? 'Contactos - Henriques.DEV' : 'Contacts - Henriques.DEV' %></title>
+    <link rel="stylesheet" href="/CSS/Main.css">
+    <link rel="stylesheet" href="/CSS/Contactos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<main>
+    <%- include('navBar') %>
+    <div class="arrow-right">
+        <a href="/home" aria-label="Go to Home"><img src="/Imagens/arrow-right.png" alt="Arrow Right" width="120"></a>
+    </div>
+
+    <%- include('ChatBot') %>
+
+</main>
+<%- include('Footer')%>
+</body>
+</html>
+

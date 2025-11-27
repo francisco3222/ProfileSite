@@ -1,4 +1,3 @@
-<!-- File: `views/Servicos.ejs` -->
 <html lang="<%= currentLang === 'en' ? 'en' : 'pt' %>">
 <head>
     <meta charset="UTF-8">
@@ -122,10 +121,11 @@
             </div>
         <% }) %>
     </section>
-    <p class="projects-subtitle" id="project-p"> E muitos mais projetos incríveis em desenvolvimento... 🚀 </p>
+    <p class="projects-subtitle" id="project-p"> <%= currentLang === 'pt' ? 'E muitos mais projetos incríveis em desenvolvimento... 🚀' : 'And many more projects in development... 🚀' %> </p>
+
     <%- include('ChatBot') %>
-    <%- include('Footer')%>
 </main>
+<%- include('Footer')%>
 
 </body>
 </html>
