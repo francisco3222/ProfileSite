@@ -39,7 +39,6 @@ body {
     transform: translateY(6px);
     will-change: transform, opacity;
     animation: nav-letter-in 420ms cubic-bezier(.2,.9,.2,1) forwards;
-    animation-delay: var(--delay, 0ms);
 }
 
 /* small hover lift per letter for a lively feel */
@@ -250,7 +249,6 @@ body {
 }
 /* ---------- HERO SECTION ---------- */
 .hero {
-    min-height: 120vh;
     display: flex;
     align-items: center;
     justify-content: center;
