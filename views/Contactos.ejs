@@ -12,56 +12,109 @@
     <div class="arrow-right">
         <a href="/home" aria-label="Go to Home"><img src="/Imagens/arrow-right.png" alt="Arrow Right" width="120"></a>
     </div>
-    <div>
-        <header class="Contacts-hero">
-            <div class="hero-badge" aria-hidden="true">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-                    <path d="M12 2v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M12 18v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M4 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M16 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span><%= currentLang === 'pt' ? 'Projetos' : 'Projects' %></span>
-            </div>
 
-            <h1 class="Contacts-title">
-                <%= currentLang === 'pt' ? 'Vamos criar algo ' : "Let's create something" %>
-                <span class="accent"><%= currentLang === 'pt' ? 'Incrível Juntos!' : 'Incredible Together!' %></span>
-            </h1>
-            <p class="Contacts-subtitle">
+    <header class="contacts-hero">
+        <div class="contacts-hero-inner">
+            <p class="contacts-eyebrow">
+                <%= currentLang === 'pt' ? 'Contacto' : 'Contact' %>
+            </p>
+            <h1 class="contacts-title">
                 <%= currentLang === 'pt'
-                        ? 'Tem algo em mente? Entre em contato comigo e vamos transformar suas ideias em realidade.'
-                            : "Got something in mind? Get in touch with me and let's turn your ideas into reality."
-                %>
-        </header>
+                        ? 'Vamos criar algo'
+                        : "Let\'s build something" %>
+                <br><em><%= currentLang === 'pt' ? 'juntos.' : 'together.' %></em>
+            </h1>
+            <p class="contacts-subtitle">
+                <%= currentLang === 'pt'
+                        ? 'Tem um projeto em mente? Fale comigo — respondo em menos de 24 horas.'
+                        : 'Have a project in mind? Reach out — I reply within 24 hours.' %>
+            </p>
+        </div>
+    </header>
+
+    <div class="contact-layout">
+
+        <aside class="contact-info" aria-label="<%= currentLang === 'pt' ? 'Informação de contacto' : 'Contact information' %>">
+            <div>
+                <p class="contact-info-label">Email</p>
+                <p class="contact-info-value">
+                    <a href="mailto:geral@henriques.dev">franciscoadelino756@gmail.com</a>
+                </p>
+            </div>
+            <div class="contact-divider" aria-hidden="true"></div>
+            <div>
+                <p class="contact-info-label"><%= currentLang === 'pt' ? 'Localização' : 'Location' %></p>
+                <p class="contact-info-value">Madeira, Portugal</p>
+            </div>
+            <div class="contact-divider" aria-hidden="true"></div>
+            <div>
+                <p class="contact-info-label"><%= currentLang === 'pt' ? 'Disponibilidade' : 'Availability' %></p>
+                <p class="contact-info-value">
+                    <%= currentLang === 'pt' ? 'Aberto a projetos freelance' : 'Open to freelance projects' %>
+                </p>
+            </div>
+        </aside>
+
+        <section class="contact-card" aria-labelledby="contact-form-title">
+            <form class="contact-form" method="post" action="/send" novalidate>
+                <div class="contact-row">
+                    <div class="field-group">
+                        <label for="name" class="field-label">
+                            <%= currentLang === 'pt' ? 'Nome' : 'Name' %>
+                        </label>
+                        <input
+                                id="name"
+                                name="name"
+                                type="text"
+                                placeholder="<%= currentLang === 'pt' ? 'Nome' : 'Name' %>"
+                                required
+                                autocomplete="name"
+                        >
+                    </div>
+                    <div class="field-group">
+                        <label for="email" class="field-label">Email</label>
+                        <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                placeholder="nome@empresa.pt"
+                                required
+                                autocomplete="email"
+                        >
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label for="message" class="field-label">
+                        <%= currentLang === 'pt' ? 'Mensagem' : 'Message' %>
+                    </label>
+                    <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            placeholder="<%= currentLang === 'pt' ? 'Conte-me sobre o seu projeto...' : 'Tell me about your project...' %>"
+                            required
+                    ></textarea>
+                </div>
+
+                <button
+                        type="submit"
+                        class="btn-send"
+                        aria-label="<%= currentLang === 'pt' ? 'Enviar mensagem' : 'Send message' %>"
+                >
+                    <%= currentLang === 'pt' ? 'Enviar mensagem' : 'Send message' %>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </form>
+        </section>
+
     </div>
-    <section class="contact-card" aria-labelledby="contact-title">
-        <h2 id="contact-title" class="contact-card-title"><%= currentLang === 'pt' ? 'Fale comigo' : 'Get in touch' %></h2>
-
-        <form class="contact-form" method="post" action="/send" novalidate>
-            <label for="name" class="field-label"><%= currentLang === 'pt' ? 'Nome Completo' : 'Full Name' %></label>
-            <input id="name" name="name" type="text" placeholder="<%= currentLang === 'pt' ? 'O seu nome' : 'Your name' %>" required>
-
-            <label for="email" class="field-label"><%= currentLang === 'pt' ? 'Email' : 'Email' %></label>
-            <input id="email" name="email" type="email" placeholder="seu@email.com" required>
-
-            <label for="message" class="field-label"><%= currentLang === 'pt' ? 'Mensagem' : 'Message' %></label>
-            <textarea id="message" name="message" rows="6" placeholder="<%= currentLang === 'pt' ? 'Conte-me sobre o seu projeto...' : 'Tell me about your project...' %>" required></textarea>
-
-            <button type="submit" class="btn-send" aria-label="<%= currentLang === 'pt' ? 'Enviar Mensagem' : 'Send Message' %>">
-                <span class="btn-text"><%= currentLang === 'pt' ? 'Enviar Mensagem' : 'Send Message' %></span>
-                <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M22 2L11 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </form>
-    </section>
 
     <%- include('ChatBot') %>
 
 </main>
-<%- include('Footer')%>
+<%- include('Footer') %>
 </body>
 </html>
-
