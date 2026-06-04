@@ -1,0 +1,47 @@
+<!-- File: views/ServicesModal.ejs -->
+<!-- Modal overlay — included once per page by Servicos.ejs -->
+
+<div class="svc-modal-overlay" id="svcModalOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="svcModalTitle">
+    <div class="svc-modal" id="svcModal">
+
+        <!-- close -->
+        <button class="svc-modal-close" id="svcModalClose" aria-label="<%= currentLang === 'pt' ? 'Fechar' : 'Close' %>">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+        </button>
+
+        <!-- header -->
+        <div class="svc-modal-header">
+            <div class="svc-modal-icon" id="svcModalIcon" aria-hidden="true"></div>
+            <div>
+                <p class="svc-modal-number" id="svcModalNumber" aria-hidden="true"></p>
+                <h2 class="svc-modal-title" id="svcModalTitle"></h2>
+            </div>
+        </div>
+
+        <!-- lead paragraph -->
+        <p class="svc-modal-lead" id="svcModalLead"></p>
+
+        <!-- what I do list -->
+        <div class="svc-modal-block">
+            <p class="svc-modal-block-label"><%= currentLang === 'pt' ? 'O que faço' : 'What I do' %></p>
+            <ul class="svc-modal-list" id="svcModalList"></ul>
+        </div>
+
+        <!-- tools/stack -->
+        <div class="svc-modal-block">
+            <p class="svc-modal-block-label"><%= currentLang === 'pt' ? 'Ferramentas & stack' : 'Tools & stack' %></p>
+            <div class="svc-modal-tags" id="svcModalTags"></div>
+        </div>
+
+        <!-- CTA -->
+        <a href="/contactos" class="svc-modal-cta">
+            <%= currentLang === 'pt' ? 'Falar sobre o projeto' : 'Talk about the project' %>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+            </svg>
+        </a>
+
+    </div>
+</div>

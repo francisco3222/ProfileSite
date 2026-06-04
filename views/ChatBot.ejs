@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/CSS/chatbot.css">
+<div class="chatbot-button" id="chatbotButton" aria-label="Open chat with Xico" role="button" tabindex="0" title="Xico">
+    <img src="Imagens/chatbot.png" alt="Chatbot">
+</div>
+
+<div class="chatbot-box hidden" id="chatbotBox" role="dialog" aria-labelledby="chatbotTitle" aria-hidden="true"
+     data-welcome="<%= currentLang === 'pt' ? 'Olá! Eu sou o Xico — posso falar sobre o Francisco e os seus projetos. Pergunta-me algo!' : 'Hello! I am Xico — I can tell you about Francisco and his projects. Ask me anything!' %>"
+     data-placeholder="<%= currentLang === 'pt' ? 'Escreve a tua mensagem...' : 'Type your message...' %>"
+     data-send="<%= currentLang === 'pt' ? 'Enviar' : 'Send' %>">
+    <div class="chatbot-header" id="chatbotTitle">
+        Xico
+        <button class="chatbot-close" id="chatbotClose" aria-label="<%= currentLang === 'pt' ? 'Fechar' : 'Close' %>">&times;</button>
+    </div>
+
+    <div class="chatbot-body">
+        <div class="chatbot-messages" id="chatbotMessages" aria-live="polite"></div>
+
+        <form class="chatbot-form" id="chatbotForm" autocomplete="off" role="search">
+            <input type="text" id="chatbotInput" class="chatbot-input" placeholder="<%= currentLang === 'pt' ? 'Escreve a tua mensagem...' : 'Type your message...' %>" aria-label="Message">
+            <button type="submit" id="chatbotSend" class="chatbot-send"><%= currentLang === 'pt' ? 'Enviar' : 'Send' %></button>
+        </form>
+    </div>
+</div>
+
+<script src="/JS/chatbot.js" defer></script>

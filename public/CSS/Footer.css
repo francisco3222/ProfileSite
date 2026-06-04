@@ -1,0 +1,103 @@
+/* public/CSS/Footer.css */
+:root{
+    --footer-bg-top: #650b0b;
+    --footer-bg-bottom: #070303;
+    --footer-text: rgba(230,230,239,0.95);
+    --footer-muted: rgba(230,230,239,0.6);
+    --footer-accent: #ff5f9a;
+    --footer-height: 88px;
+    --footer-gap: 1rem;
+    --footer-radius: 12px;
+    --footer-icon-bg: rgba(255,255,255,0.03);
+    --footer-icon-hover: rgba(255,255,255,0.08);
+}
+
+/* wrapper */
+.site-footer{
+    background: linear-gradient(0deg, var(--footer-bg-top), var(--footer-bg-bottom));
+    color: var(--footer-text);
+    padding: clamp(0.9rem, 2.2vw, 1.6rem) 6%;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+    font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* inner layout */
+.site-footer .footer-inner{
+    max-width: 2000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--footer-gap);
+    min-height: var(--footer-height);
+    padding: 0;
+}
+
+/* left text */
+.site-footer .footer-left{
+    color: var(--footer-muted);
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+/* right social icons */
+.site-footer .social-list{
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+/* button-like links */
+.site-footer .social-link{
+    display: inline-grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: var(--footer-icon-bg);
+    color: var(--footer-muted);
+    text-decoration: none;
+    transition: transform .18s ease, background .18s ease, color .18s ease;
+    border: 1px solid rgba(255,255,255,0.02);
+}
+.site-footer .social-link:hover,
+.site-footer .social-link:focus{
+    transform: translateY(-4px);
+    background: var(--footer-icon-hover);
+    color: var(--footer-text);
+    outline: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+
+/* icon sizing */
+.site-footer .social-link svg{
+    width:20px;
+    height:20px;
+    display:block;
+    fill: currentColor;
+    opacity: 0.95;
+}
+
+/* accent on focus-visible */
+.site-footer .social-link:focus-visible{
+    box-shadow: 0 0 0 4px rgba(255, 95, 95, 0.12);
+}
+
+/* responsive: stack on small screens */
+@media (max-width:680px){
+    .site-footer .footer-inner{
+        flex-direction: column;
+        gap: 0.6rem;
+        text-align: center;
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+    }
+    .site-footer .social-list{ order: 2; }
+    .site-footer .footer-left{ order: 1; }
+    .site-footer .social-link{ width:44px; height:44px; border-radius:9px; }
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce){
+    .site-footer .social-link{ transition: none !important; transform: none !important; }
+}

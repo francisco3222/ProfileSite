@@ -1,0 +1,253 @@
+/* ─── hero ─────────────────────────────────────────────── */
+.contacts-hero {
+    padding: 4rem 6% 2rem;
+    position: relative;
+}
+
+.contacts-hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.contacts-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 90, 90, 0.9);
+    margin-bottom: 1.4rem;
+}
+
+.contacts-eyebrow::before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 1px;
+    background: rgba(255, 90, 90, 0.7);
+}
+
+.contacts-title {
+    font-size: clamp(2.6rem, 5.8vw, 4.8rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.94);
+    margin: 0 0 1.2rem;
+}
+
+.contacts-title em {
+    font-style: italic;
+    color: rgba(255, 90, 90, 0.9);
+    font-weight: 300;
+}
+
+.contacts-subtitle {
+    max-width: 520px;
+    font-size: clamp(0.9rem, 1.3vw, 1rem);
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* ─── layout wrapper ────────────────────────────────────── */
+.contact-layout {
+    max-width: 980px;
+    margin: 3rem auto 4rem;
+    padding: 0 6%;
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* ─── sidebar info ──────────────────────────────────────── */
+.contact-info {
+    padding-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-info-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+    margin: 0 0 0.4rem;
+}
+
+.contact-info-value {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.contact-info-value a {
+    color: rgba(255, 90, 90, 0.85);
+    text-decoration: none;
+    transition: color 150ms;
+}
+
+.contact-info-value a:hover {
+    color: rgba(255, 90, 90, 1);
+}
+
+.contact-divider {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.12), transparent);
+}
+
+/* ─── form card ─────────────────────────────────────────── */
+.contact-card {
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 2.4rem;
+    position: relative;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: radial-gradient(ellipse at 80% 0%, rgba(255, 60, 60, 0.07) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+/* ─── form ──────────────────────────────────────────────── */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+.contact-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.field-label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.38);
+    text-transform: uppercase;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 200ms, background 200ms;
+    resize: none;
+    box-sizing: border-box;
+}
+
+.contact-form ::placeholder {
+    color: rgba(255, 255, 255, 0.18);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: rgba(255, 80, 80, 0.45);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.contact-form textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+/* ─── submit ────────────────────────────────────────────── */
+.btn-send {
+    margin-top: 0.3rem;
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 26px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 80, 80, 0.5);
+    background: transparent;
+    color: rgba(255, 90, 90, 0.9);
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: background 200ms, border-color 200ms, color 200ms, transform 150ms;
+}
+
+.btn-send:hover {
+    background: rgba(255, 80, 80, 0.1);
+    border-color: rgba(255, 80, 80, 0.75);
+    color: rgba(255, 110, 110, 1);
+    transform: translateY(-1px);
+}
+
+.btn-send:active {
+    transform: translateY(0);
+}
+
+.btn-send svg {
+    transition: transform 200ms;
+}
+
+.btn-send:hover svg {
+    transform: translate(2px, -2px);
+}
+
+/* ─── responsive ────────────────────────────────────────── */
+@media (max-width: 700px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .contact-info {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.4rem;
+    }
+
+    .contact-divider {
+        display: none;
+    }
+
+    .contact-row {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-send {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 420px) {
+    .contact-card {
+        padding: 1.4rem;
+    }
+}

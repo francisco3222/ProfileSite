@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="<%= currentLang === 'en' ? 'en' : 'pt' %>">
+<head>
+    <meta charset="UTF-8">
+    <title><%= currentLang === 'pt' ? 'Serviços - Henriques.DEV' : 'Services - Henriques.DEV' %></title>
+    <link rel="stylesheet" href="/CSS/Main.css">
+    <link rel="stylesheet" href="/CSS/Services.css">
+    <link rel="stylesheet" href="/CSS/ServicesModal.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<main>
+    <%- include('navBar') %>
+    <div class="arrow-right">
+        <a href="/projetos" aria-label="Go to Projects"><img src="/Imagens/arrow-right.png" alt="Arrow Right" width="120"></a>
+    </div>
+
+    <header class="svc-hero">
+        <div class="svc-hero-inner">
+            <p class="svc-eyebrow"><%= currentLang === 'pt' ? 'O que faço' : 'What I do' %></p>
+            <h1 class="svc-title">
+                <%= currentLang === 'pt' ? 'Serviços' : 'Services' %>
+                <em><%= currentLang === 'pt' ? 'que entregam.' : 'that deliver.' %></em>
+            </h1>
+            <p class="svc-subtitle">
+                <%= currentLang === 'pt'
+                        ? 'Não faço tudo — faço bem o que importa. Cada projeto é tratado com atenção ao detalhe e ao resultado final.'
+                        : "I don't do everything — I do well what matters. Every project is treated with attention to detail and the end result." %>
+            </p>
+        </div>
+    </header>
+
+    <section class="svc-section" aria-label="<%= currentLang === 'pt' ? 'Serviços' : 'Services' %>">
+        <div class="svc-grid">
+
+            <!-- Cybersecurity -->
+            <article class="svc-card" data-service="cyber" tabindex="0"
+                     aria-label="<%= currentLang === 'pt' ? 'Cibersegurança — clique para saber mais' : 'Cybersecurity — click to learn more' %>">
+                <div class="svc-card-number" aria-hidden="true">01</div>
+                <div class="svc-card-icon" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </div>
+                <div class="svc-card-content">
+                    <h2 class="svc-card-title"><%= currentLang === 'pt' ? 'Cibersegurança' : 'Cybersecurity' %></h2>
+                    <p class="svc-card-desc">
+                        <%= currentLang === 'pt'
+                                ? 'Auditoria, pentesting e proteção de sistemas web contra vulnerabilidades reais.'
+                                : 'Auditing, pentesting and protection of web systems against real vulnerabilities.' %>
+                    </p>
+                    <div class="svc-card-tags" aria-hidden="true">
+                        <span class="svc-tag">Java</span>
+                        <span class="svc-tag">Auth</span>
+                        <span class="svc-tag">OWASP</span>
+                    </div>
+                </div>
+                <div class="svc-card-arrow" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </div>
+            </article>
+
+            <!-- Design -->
+            <article class="svc-card" data-service="design" tabindex="0"
+                     aria-label="<%= currentLang === 'pt' ? 'Design Moderno — clique para saber mais' : 'Modern Design — click to learn more' %>">
+                <div class="svc-card-number" aria-hidden="true">02</div>
+                <div class="svc-card-icon" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M8 12h8M12 8v8"/>
+                        <path d="M4.93 4.93l14.14 14.14"/>
+                    </svg>
+                </div>
+                <div class="svc-card-content">
+                    <h2 class="svc-card-title"><%= currentLang === 'pt' ? 'Design Moderno' : 'Modern Design' %></h2>
+                    <p class="svc-card-desc">
+                        <%= currentLang === 'pt'
+                                ? 'Interfaces que as pessoas sentem antes de perceber — rápidas, claras e com identidade.'
+                                : 'Interfaces people feel before they understand — fast, clear and with identity.' %>
+                    </p>
+                    <div class="svc-card-tags" aria-hidden="true">
+                        <span class="svc-tag">Figma</span>
+                        <span class="svc-tag">UI/UX</span>
+                        <span class="svc-tag">Design System</span>
+                    </div>
+                </div>
+                <div class="svc-card-arrow" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </div>
+            </article>
+
+            <!-- AI -->
+            <article class="svc-card" data-service="ai" tabindex="0"
+                     aria-label="<%= currentLang === 'pt' ? 'Inteligência Artificial — clique para saber mais' : 'Artificial Intelligence — click to learn more' %>">
+                <div class="svc-card-number" aria-hidden="true">03</div>
+                <div class="svc-card-icon" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4"/>
+                        <path d="M12 14c-4.97 0-9 2.02-9 4.5V20h18v-1.5c0-2.48-4.03-4.5-9-4.5z"/>
+                        <path d="M6 8h1M17 8h1M3 15l2-2M19 15l-2-2"/>
+                    </svg>
+                </div>
+                <div class="svc-card-content">
+                    <h2 class="svc-card-title"><%= currentLang === 'pt' ? 'Inteligência Artificial' : 'Artificial Intelligence' %></h2>
+                    <p class="svc-card-desc">
+                        <%= currentLang === 'pt'
+                                ? 'Integração de LLMs e modelos preditivos no seu produto — sem complexidade desnecessária.'
+                                : 'Integration of LLMs and predictive models into your product — without unnecessary complexity.' %>
+                    </p>
+                    <div class="svc-card-tags" aria-hidden="true">
+                        <span class="svc-tag">Python</span>
+                        <span class="svc-tag">OpenAI</span>
+                        <span class="svc-tag">LLMs</span>
+                    </div>
+                </div>
+                <div class="svc-card-arrow" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </div>
+            </article>
+
+            <!-- APIs -->
+            <article class="svc-card" data-service="api" tabindex="0"
+                     aria-label="<%= currentLang === 'pt' ? 'APIs Escaláveis — clique para saber mais' : 'Scalable APIs — click to learn more' %>">
+                <div class="svc-card-number" aria-hidden="true">04</div>
+                <div class="svc-card-icon" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="6" height="6" rx="1"/>
+                        <rect x="16" y="3" width="6" height="6" rx="1"/>
+                        <rect x="2" y="15" width="6" height="6" rx="1"/>
+                        <rect x="16" y="15" width="6" height="6" rx="1"/>
+                        <path d="M8 6h8M8 18h8M5 9v6M19 9v6"/>
+                    </svg>
+                </div>
+                <div class="svc-card-content">
+                    <h2 class="svc-card-title"><%= currentLang === 'pt' ? 'APIs Escaláveis' : 'Scalable APIs' %></h2>
+                    <p class="svc-card-desc">
+                        <%= currentLang === 'pt'
+                                ? 'Backends robustos, bem documentados e preparados para crescer com o seu negócio.'
+                                : 'Robust, well-documented backends prepared to grow with your business.' %>
+                    </p>
+                    <div class="svc-card-tags" aria-hidden="true">
+                        <span class="svc-tag">Node.js</span>
+                        <span class="svc-tag">PostgreSQL</span>
+                        <span class="svc-tag">REST</span>
+                        <span class="svc-tag">REACT</span>
+                    </div>
+                </div>
+                <div class="svc-card-arrow" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- CTA strip -->
+        <div class="svc-cta-strip">
+            <p class="svc-cta-text">
+                <%= currentLang === 'pt' ? 'Tem um projeto em mente?' : 'Have a project in mind?' %>
+            </p>
+            <a href="/contactos" class="svc-cta-btn">
+                <%= currentLang === 'pt' ? 'Fale comigo' : 'Get in touch' %>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <%- include('ServicesModal') %>
+    <%- include('ChatBot') %>
+</main>
+<%- include('Footer') %>
+
+<script src="/JS/ServicesModal.js"></script>
+</body>
+</html>

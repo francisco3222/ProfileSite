@@ -1,0 +1,285 @@
+/* ── Services.css ───────────────────────────────────────── */
+
+/* ── hero ───────────────────────────────────────────────── */
+.svc-hero {
+    padding: 4.5rem 6% 2.5rem;
+}
+
+.svc-hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.svc-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 80, 80, 0.85);
+    margin-bottom: 1.2rem;
+}
+
+.svc-eyebrow::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: rgba(255, 80, 80, 0.6);
+}
+
+.svc-title {
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 400;
+    line-height: 1.0;
+    letter-spacing: -0.035em;
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0 0 1.1rem;
+}
+
+.svc-title em {
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(255, 80, 80, 0.85);
+    display: block;
+}
+
+.svc-subtitle {
+    max-width: 500px;
+    font-size: clamp(0.88rem, 1.2vw, 0.98rem);
+    color: rgba(255, 255, 255, 0.42);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ── section + grid ─────────────────────────────────────── */
+.svc-section {
+    padding: 1rem 6% 5rem;
+}
+
+.svc-grid {
+    max-width: 1100px;
+    margin: 0 auto 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+/* ── card ───────────────────────────────────────────────── */
+.svc-card {
+    position: relative;
+    padding: 2.4rem 2.2rem;
+    background: rgba(255, 255, 255, 0.018);
+    border: 0;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: background 250ms ease;
+    outline: none;
+}
+
+.svc-card:nth-child(1),
+.svc-card:nth-child(2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.svc-card:nth-child(1),
+.svc-card:nth-child(3) {
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.svc-card:hover,
+.svc-card:focus-visible {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.svc-card:focus-visible {
+    box-shadow: inset 0 0 0 2px rgba(255, 80, 80, 0.4);
+}
+
+/* number watermark */
+.svc-card-number {
+    position: absolute;
+    top: 1.8rem;
+    right: 2rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.1);
+}
+
+/* icon */
+.svc-card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: rgba(255, 80, 80, 0.08);
+    border: 1px solid rgba(255, 80, 80, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 100, 100, 0.85);
+    margin-bottom: 1.6rem;
+    transition: background 250ms, border-color 250ms, transform 250ms;
+}
+
+.svc-card:hover .svc-card-icon,
+.svc-card:focus-visible .svc-card-icon {
+    background: rgba(255, 80, 80, 0.14);
+    border-color: rgba(255, 80, 80, 0.25);
+    transform: translateY(-2px);
+}
+
+.svc-card-content {
+    flex: 1;
+}
+
+.svc-card-title {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 0.7rem;
+    letter-spacing: -0.01em;
+    transition: color 200ms;
+}
+
+.svc-card:hover .svc-card-title {
+    color: rgba(255, 255, 255, 1);
+}
+
+.svc-card-desc {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.65;
+    margin: 0 0 1.2rem;
+}
+
+/* tags */
+.svc-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 1.8rem;
+}
+
+.svc-tag {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 4px 10px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* arrow */
+.svc-card-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.4);
+    transition: border-color 200ms, color 200ms, transform 200ms;
+}
+
+.svc-card:hover .svc-card-arrow,
+.svc-card:focus-visible .svc-card-arrow {
+    border-color: rgba(255, 80, 80, 0.5);
+    color: rgba(255, 100, 100, 0.9);
+    transform: translate(2px, -2px);
+}
+
+/* ── CTA strip ──────────────────────────────────────────── */
+.svc-cta-strip {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.6rem 2.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.015);
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.svc-cta-text {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0;
+}
+
+.svc-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 80, 80, 0.4);
+    color: rgba(255, 100, 100, 0.9);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background 200ms, border-color 200ms, transform 150ms;
+}
+
+.svc-cta-btn:hover {
+    background: rgba(255, 80, 80, 0.08);
+    border-color: rgba(255, 80, 80, 0.65);
+    transform: translateY(-1px);
+}
+
+.svc-cta-btn svg {
+    transition: transform 200ms;
+}
+
+.svc-cta-btn:hover svg {
+    transform: translate(2px, -2px);
+}
+
+/* ── responsive ─────────────────────────────────────────── */
+@media (max-width: 680px) {
+    .svc-grid {
+        grid-template-columns: 1fr;
+        border-radius: 14px;
+    }
+
+    .svc-card:nth-child(1),
+    .svc-card:nth-child(2),
+    .svc-card:nth-child(3) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        border-right: 0;
+    }
+
+    .svc-card:nth-child(4) {
+        border-right: 0;
+    }
+
+    .svc-card {
+        padding: 1.8rem 1.6rem;
+    }
+
+    .svc-cta-strip {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .svc-card,
+    .svc-card-icon,
+    .svc-card-arrow,
+    .svc-cta-btn { transition: none !important; transform: none !important; }
+}

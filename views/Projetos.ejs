@@ -1,0 +1,131 @@
+<html lang="<%= currentLang === 'en' ? 'en' : 'pt' %>">
+<head>
+    <meta charset="UTF-8">
+    <title><%= currentLang === 'pt' ? 'Projetos - Henriques.DEV' : 'Projects - Henriques.DEV' %></title>
+    <link rel="stylesheet" href="/CSS/Main.css">
+    <link rel="stylesheet" href="/CSS/Projetos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<main>
+    <%- include('navBar') %>
+    <div class="arrow-right">
+        <a href="/contactos" aria-label="Go to Services"><img src="/Imagens/arrow-right.png" alt="Arrow Right" width="120"></a>
+    </div>
+    <div>
+        <header class="projects-hero">
+            <div class="hero-badge" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                    <path d="M12 2v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 18v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span><%= currentLang === 'pt' ? 'Projetos' : 'Projects' %></span>
+            </div>
+
+            <h1 class="projects-title">
+                <%= currentLang === 'pt' ? 'Projetos ' : 'Developed ' %>
+                <span class="accent"><%= currentLang === 'pt' ? 'Desenvolvidos' : 'Projects' %></span>
+            </h1>
+            <p class="projects-subtitle">
+                <%= currentLang === 'pt'
+                    ? 'Aqui estão alguns dos meus projetos mais recentes. Sinta-se à vontade para explorar e conhecer mais sobre o meu trabalho.'
+                    : 'Here are some of my recent projects. Feel free to explore and learn more about my work.' %>
+        </header>
+    </div>
+
+
+    <section class="projetos-grid" aria-label="Projetos">
+        <% const projetos = [
+            {
+                slug: 'SpaceSoup',
+                title: currentLang === 'pt' ? 'SpaceSoup' : 'SpaceSoup',
+                description: currentLang === 'pt'
+                        ? 'Site sobre curiosidades espacias, poderás saber diversas curiosidades sobre o espaço e o nosso universo.'
+                        : 'Site about space curiosities with facts about the universe.',
+                image: '/Imagens/spacesoup.png',
+                hoverImage: null,
+                demo: '#',
+                repo: 'https://github.com/francisco3222/SpaceSoup',
+                tags: ['HTML','CSS','JS','API','BD']
+            },
+            {
+                slug: 'barbie',
+                title: currentLang === 'pt' ? 'Jogo BarbieGirl' :  'BarbieGirl Game',
+                description: currentLang === 'pt'
+                        ? 'Jogo interativo inspirado no filme BarbieGirl e Oppenheimer, onde podes explorar diferentes cenários em 2D.'
+                        : 'Interactive game inspired by the BarbieGirl and Oppenheimer movie, where you can explore different 2D scenarios.',
+                image: '/Imagens/barbie.png',
+                hoverImage: null,
+                demo: '#',
+                repo: 'https://github.com/francisco3222/BarbieGirlGame',
+                tags: ['Java','2D','Design']
+            },
+            {
+                slug: 'AdelinoFootballManager',
+                title: currentLang === 'pt' ? 'Jogo FootballManager' : 'FootballManager Game',
+                description: currentLang === 'pt'
+                        ? 'Jogo interativo inspirado no Jogo FootballManager onde podes gerir o teu próprio clube de futebol.'
+                        : 'Interactive game inspired by the FootballManager game where you can manage your own football club.',
+                image: '/Imagens/footballmanager.png',
+                hoverImage: null,
+                demo: '#',
+                repo: 'https://github.com/francisco3222/AdelinoFootballManager',
+                tags: ['Java','Terminal','TXT']
+            },
+            {
+                slug: 'landing',
+                title: currentLang === 'pt' ? 'Landing Conversora' : 'Conversion Landing',
+                description: currentLang === 'pt'
+                        ? 'Landing page otimizada para conversões e A/B testing.'
+                        : 'Landing page optimized for conversions and A/B testing.',
+                image: '/Imagens/proj4.jpg',
+                hoverImage: null,
+                demo: '#',
+                repo: '#',
+                tags: ['Marketing','SEO','Design']
+            }
+        ]; %>
+
+        <% projetos.forEach(p => { %>
+            <div class="proj-wrap" id="proj-<%= p.slug %>">
+                <article class="proj-card" role="group" aria-labelledby="proj-<%= p.slug %>">
+                    <div class="proj-media">
+                        <img src="<%= p.image %>" alt="<%= p.title %>" class="thumb">
+                        <% if (p.hoverImage) { %>
+                            <img src="<%= p.hoverImage %>" alt="" class="thumb-hover">
+                        <% } %>
+                        <div class="proj-overlay">
+                            <a href="<%= p.demo %>" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Demo">🔗</a>
+                            <a href="<%= p.repo %>" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="Repo">
+                                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="false" focusable="false">
+                                    <title>GitHub</title>
+                                    <path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.744.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.809 1.305 3.495.998.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.335-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.135-.303-.54-1.524.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.874.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.435.375.825 1.11.825 2.24 0 1.62-.015 2.92-.015 3.32 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297 24 5.67 18.627.297 12 .297z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="proj-body">
+                        <h3 class="proj-title" id="proj-<%= p.slug %>-title"><%= p.title %></h3>
+                        <p class="proj-desc"><%= p.description %></p>
+
+                        <div class="proj-tags">
+                            <% (p.tags || []).forEach(function(t){ %>
+                                <span class="tag"><%= t %></span>
+                            <% }) %>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        <% }) %>
+    </section>
+    <p class="projects-subtitle" id="project-p"> <%= currentLang === 'pt' ? 'E muitos mais projetos incríveis em desenvolvimento... 🚀' : 'And many more projects in development... 🚀' %> </p>
+
+    <%- include('ChatBot') %>
+</main>
+<%- include('Footer')%>
+
+</body>
+</html>

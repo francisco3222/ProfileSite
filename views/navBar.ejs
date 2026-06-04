@@ -1,0 +1,26 @@
+<!-- html -->
+<nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="logo">Henriques<span class="dot">.DEV</span></div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="/home" class="<%= currentPath === '/home' ? 'active' : '' %>"><%= currentLang === 'pt' ? 'Home' : 'Home' %></a></li>
+        <li><a href="/servicos" class="<%= currentPath === '/servicos' ? 'active' : '' %>"><%= currentLang === 'pt' ? 'Serviços' : 'Services' %></a></li>
+        <li><a href="/projetos" class="<%= currentPath === '/projetos' ? 'active' : '' %>"><%= currentLang === 'pt' ? 'Projetos' : 'Projects' %></a></li>
+        <li><a href="/contactos" class="<%= currentPath === '/contactos' ? 'active' : '' %>"><%= currentLang === 'pt' ? 'Contactos' : 'Contacts' %></a></li>
+
+        <li class="lang-switch">
+            <% if(currentLang === 'pt') { %>
+                <a href="/set-language/en" class="lang-btn" aria-label="Switch to English">
+                    <img src="/Imagens/en.png" alt="EN" width="49" height="22">
+                </a>
+            <% } else { %>
+                <a href="/set-language/pt" class="lang-btn" aria-label="Mudar para Português">
+                    <img src="/Imagens/pt.png" alt="PT" width="49" height="22">
+                </a>
+            <% } %>
+        </li>
+    </ul>
+    <div class="nav-indicator" id="navIndicator" aria-hidden="true"></div>
+</nav>
+
+<script src="/JS/navbar.js" defer></script>

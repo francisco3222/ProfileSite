@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="<%= currentLang === 'en' ? 'en' : 'pt' %>">
+<head>
+    <meta charset="UTF-8">
+    <title>Henriques.DEV</title>
+    <link rel="stylesheet" href="/CSS/Main.css">
+
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <main>
+        <%- include('navBar')%>
+        <div class="arrow-right">
+            <a href="/servicos" aria-label="Go to Services"><img src="/Imagens/arrow-right.png" alt="Arrow Right" width="120"></a>
+        </div>
+        <section class="hero">
+            <div class="hero-left">
+                <img id="profile-pic" src="/Imagens/portrait.png" alt="Francisco Henriques" class="profile-pic">
+                <div class="socials">
+                    <a href="https://www.linkedin.com/in/francisco-adelino-521513303/" target="_blank" aria-label="LinkedIn"><img src="/Imagens/linkedin.png" alt="LinkedIn" width="20"></a>
+                    <a href="https://github.com/francisco3222" target="_blank" aria-label="GitHub"><img src="/Imagens/github.png" alt="GitHub" width="20"></a>
+                    <a href="https://instagram.com/franciscoadelino756" target="_blank" aria-label="Instagram"><img src="/Imagens/instagram.png" alt="Instagram" width="20"></a>
+                    <a href="https://discord.com/users/318829246850007041" target="_blank" aria-label="Discord"><img src="/Imagens/discord.png" alt="Discord" width="20"></a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-badge" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                        <path d="M12 2v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 18v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span><%= currentLang === 'pt' ? 'Disponível para novos Desafios' : 'Prepared for new challenges' %></span>
+                </div>
+                <h2>
+                    <%= currentLang === 'pt' ? 'Olá' : 'Hello' %> <span aria-label="wave" role="img">👋</span>,
+                    <%= currentLang === 'pt' ? 'sou o' : 'I am' %> <span class="highlight1">Francisco</span>
+                </h2>
+                <h3>
+                    <%= currentLang === 'pt' ? 'E sou um' : 'And I am a' %> <span class="highlight2"><%= currentLang === 'pt' ? 'Desenvolvedor' : 'Developer' %></span>
+                </h3>
+                <p>
+                    <%= currentLang === 'pt' ?
+                        'Sou estudante de Engenharia Informática na Universidade da Madeira, apaixonado por desenvolvimento web, segurança de sistemas e criação de jogos.'
+                        :
+                        'I am a Computer Science student at the University of Madeira, passionate about web development, system security and game creation.' %>
+                </p>
+                <p>
+                    <%= currentLang === 'pt' ?
+                        'Procuro criar soluções eficientes, escaláveis e seguras, sempre com foco na experiência do utilizador. Tenho também grande interesse em desenvolvimento de jogos, em áreas como hitboxes, IA de NPCs e movimento de personagens.'
+                        :
+                        'I strive to create efficient, scalable, and secure solutions, always focusing on user experience. I am also greatly interested in game development, especially in areas such as hitboxes, NPC AI, and character movement.' %>
+                </p>
+                <div class="skills">
+                    <img src="/Imagens/c.png" alt="C" title="C" width="30">
+                    <img src="/Imagens/c++.png" alt="C++" title="C++" width="30">
+                    <img src="/Imagens/csharp.png" alt="C#" title="C#" width="30">
+                    <img src="/Imagens/javascript.png" alt="JavaScript" title="JavaScript" width="30">
+                    <img src="/Imagens/php.png" alt="PHP" title="PHP" width="30">
+                    <img src="/Imagens/python.png" alt="Python" title="Python" width="30">
+                    <img src="/Imagens/mysql.png" alt="MySQL" title="MySQL" width="30">
+                    <img src="/Imagens/react.png" alt="React" title="React" width="30">
+                    <img src="/Imagens/nodejs.png" alt="Node.js" title="Node.js" width="30">
+                    <img src="/Imagens/dotnet.png" alt=".NET" title=".NET" width="30">
+                    <img src="/Imagens/blazor.png" alt="Blazor" title="Blazor" width="30">
+                    <img src="/Imagens/expressjs.png" alt="ExpressJS" title="ExpressJS" width="30">
+                </div>
+                <a href="/contactos" class="hire-btn"><%= currentLang === 'pt' ? 'Hire Me' : 'Hire Me' %></a>
+            </div>
+
+            <%- include('ChatBot')%>
+        </section>
+    </main>
+    <%- include('Footer')%>
+
+</body>
+</html>
